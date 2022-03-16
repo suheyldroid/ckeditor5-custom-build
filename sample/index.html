@@ -122,7 +122,6 @@
     </p>
 </footer>
 <script src="../build/ckeditor.js"></script>
-<script src="../src/ThirdPartyPlugins/FileUploader/FileUploader.js"></script>
 <script>
 	const watchdog = new CKSource.EditorWatchdog();
 
@@ -131,9 +130,11 @@
 	watchdog.setCreator((element, config) => {
 		return CKSource.Editor
 			.create(element, {
-				extraPlugins: [
-					MyCustomUploadAdapterPlugin
-				], ...config
+				...config,
+				fileUpload: {
+					uploadURL: "http://localhost:8000/api/graph/upload-file/",
+                    downloadURL:"http://localhost:8000"
+				}
 			})
 			.then(editor => {
 				// Set a custom container for the toolbar.

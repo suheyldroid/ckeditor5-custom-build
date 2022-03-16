@@ -1,0 +1,17 @@
+.file {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.fileName {
+    text-align: center;
+}
+
+.downloadButton {
+    background: powderblue;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px;
+    text-decoration: none;
+}

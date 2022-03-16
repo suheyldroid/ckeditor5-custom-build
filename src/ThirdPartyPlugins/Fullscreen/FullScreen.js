@@ -20,8 +20,7 @@ export default class FullScreen extends Plugin {
 			// Callback executed once the image is clicked.
 			view.on("execute", () => {
 				if (etat == 1) {
-					console.log(editor);
-					editor.sourceElement.parentElement.parentElement.parentElement.removeAttribute("id");
+					editor.sourceElement.parentElement.parentElement.removeAttribute("id");
 
 					document.body.removeAttribute("id");
 					view.set({
@@ -31,7 +30,7 @@ export default class FullScreen extends Plugin {
 					});
 					etat = 0;
 				} else {
-					editor.sourceElement.parentElement.parentElement.parentElement.setAttribute("id", "fullscreeneditor");
+					editor.sourceElement.parentElement.parentElement.setAttribute("id", "fullscreeneditor");
 					document.body.setAttribute("id", "fullscreenoverlay");
 					view.set({
 						label: "Mode Normal",

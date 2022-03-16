@@ -73,10 +73,11 @@ import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline.js";
 import WordCount from "@ckeditor/ckeditor5-word-count/src/wordcount.js";
 import EditorWatchdog from "@ckeditor/ckeditor5-watchdog/src/editorwatchdog.js";
 import FullScreen from "./ThirdPartyPlugins/Fullscreen/FullScreen.js";
-import { MyCustomUploadAdapterPlugin } from "./ThirdPartyPlugins/FileUploader/FileUploader";
+import FileUpload from "./ThirdPartyPlugins/FileUpload/FileUpload";
 
 class Editor extends DecoupledDocumentEditor {}
 
+import "./ThirdPartyPlugins/FileUpload/styles/styles.css"
 // Plugins to include in the build.
 Editor.builtinPlugins = [
 	FullScreen,
@@ -87,6 +88,7 @@ Editor.builtinPlugins = [
 	AutoLink,
 	Autosave,
 	Base64UploadAdapter,
+	FileUpload,
 	BlockQuote,
 	Bold,
 	CloudServices,
@@ -147,14 +149,14 @@ Editor.builtinPlugins = [
 	Title,
 	TodoList,
 	Underline,
-	WordCount,
+	WordCount
 ];
 
 // Editor configuration.
 Editor.defaultConfig = {
 	toolbar: {
 		items: [
-
+			"file",
 			"fullScreen",
 			"undo",
 			"redo",

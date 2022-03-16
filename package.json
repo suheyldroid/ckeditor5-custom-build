@@ -1,11 +1,12 @@
 {
-  "name": "@ilterugur/ckeditor5-custom-build",
-  "author": "ilterugur",
+  "name": "@suheyldroid/ckeditor5-custom-build",
+  "author": "suheyldroid",
   "description": "A custom CKEditor 5 build made by the CKEditor 5 online builder.",
-  "version": "0.0.3",
+  "version": "0.0.11",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "./build/ckeditor.js",
   "dependencies": {
+    "@ckeditor/ckeditor5-widget": "^33.0.0",
     "ckeditor5": "^33.0.0",
     "lodash-es": "^4.17.21"
   },
@@ -33,6 +34,7 @@
     "@ckeditor/ckeditor5-html-support": "^33.0.0",
     "@ckeditor/ckeditor5-image": "^33.0.0",
     "@ckeditor/ckeditor5-indent": "^33.0.0",
+    "@ckeditor/ckeditor5-inspector": "^3.1.0",
     "@ckeditor/ckeditor5-link": "^33.0.0",
     "@ckeditor/ckeditor5-list": "^33.0.0",
     "@ckeditor/ckeditor5-media-embed": "^33.0.0",
@@ -64,6 +66,10 @@
     "webpack-cli": "^4.9.2"
   },
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
